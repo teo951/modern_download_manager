@@ -1,5 +1,0 @@
-<!ENTITY downloadbarstats.title "Statystyki pobierania">
-<!ENTITY downloadbarstats.nostats "brak danych do wyświetlenia!">
-<!ENTITY downloadbarstats.dwnldgrph "Wykres może zostać wyświetlony tylko, gdy są pobrane pliki!">
-<!ENTITY downloadbarstats.bybyts "wg rozmiaru plików">
-<!ENTITY downloadbarstats.bycnt "wg typu plików">
