@@ -1,0 +1,787 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://downloadbar/skin/downloadbar.css" type="text/css"?>
+
+<!DOCTYPE prefwindow SYSTEM "chrome://downloadbar/locale/options.dtd">
+
+<prefwindow id="downloadbar-options"
+            xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+            xmlns:html="http://www.w3.org/1999/xhtml"
+            title="&downloadbaropt.windowtitle;"
+            onload="mdbPref.modeDisplay()">
+
+  <prefpane id="behaviourPane" label="&downloadbaropt.main;">
+    <preferences>
+      <preference id="clearafterlaunch" 
+                  name="extensions.mdownloadbar.clearafterlaunch"
+                  type="bool" />
+      <preference id="clearaftershowfile"
+                  name="extensions.mdownloadbar.clearaftershowfile"
+                  type="bool" />
+      <preference id="showaddonbarbutton"
+                  name="extensions.mdownloadbar.showaddonbarbutton"
+                  type="bool"
+                  instantApply="true" />
+      <preference id="autoopendownloaddirectory"
+                  name="extensions.mdownloadbar.autoopendownloaddirectory"
+                  type="bool" />
+      <preference id="autoopendownloadtab"
+                  name="extensions.mdownloadbar.autoopendownloadtab"
+                  type="bool" />
+      <preference id="autocleancompletedonquit"
+                  name="extensions.mdownloadbar.autocleancompletedonquit"
+                  type="bool" />
+      <preference id="askconfirmationbeforedelete"
+                  name="extensions.mdownloadbar.askconfirmationbeforedelete"
+                  type="bool" />
+      <preference id="continuedownloadsonquit"
+                  name="extensions.mdownloadbar.continuedownloadsonquit"
+                  type="bool" />
+      <preference id="autoclosebarwhendownloadscomplete"
+                  name="extensions.mdownloadbar.autoclosebarwhendownloadscomplete"
+                  type="bool" />
+      <preference id="autoclosesecond"
+                  name="extensions.mdownloadbar.autoclosesecond"
+                  type="int" />
+      <preference id="doubleclickaction"
+                  name="extensions.mdownloadbar.doubleclickaction"
+                  type="string"
+                  instantApply="true" />
+      <preference id="autoclearfiletypes"
+                  name="extensions.mdownloadbar.autoclearfiletypes"
+                  type="string" />
+      <preference id="autoclearsecond"
+                  name="extensions.mdownloadbar.autoclearsecond"
+                  type="int" />
+    </preferences>
+
+    <groupbox>
+      <caption>
+        <label value="&downloadbaropt.ptns;" />
+        <image id="mdbHelp01"
+               tooltiptext="&downloadbaropt.infotooltip;"
+               class="helpButton"
+               onclick="mdbPref.mdbHelp('01','&downloadbaropt.ptns;');" />
+      </caption>
+      <checkbox id="downloadbar-opt-clrftrlnch"
+                label="&downloadbaropt.clrrftrlnch;"
+                accesskey="&downloadbaropt.clrrftrlnch.ak;"
+                preference="clearafterlaunch" />
+      <checkbox id="downloadbar-opt-clrftrshwfl"
+                label="&downloadbaropt.clrrftrshw;"
+                accesskey="&downloadbaropt.clrrftrshw.ak;"
+                preference="clearaftershowfile" />
+      <checkbox id="downloadbar-opt-shwddnbrbttn"
+                label="&downloadbaropt.shwddbbrbttn;"
+                accesskey="&downloadbaropt.shwddbbrbttn.ak;"
+                hidden="true"
+                preference="showaddonbarbutton" />
+      <checkbox id="downloadbar-opt-pnatmtcllyftrdwnld"
+                label="&downloadbaropt.pnftrdwncmp;"
+                accesskey="&downloadbaropt.pnftrdwncmp.ak;"
+                preference="autoopendownloaddirectory" />
+      <checkbox id="downloadbar-opt-atpndwnldtb"
+                label="&downloadbaropt.atpndwnldtb;"
+                accesskey="&downloadbaropt.atpndwnldtb.ak;"
+                preference="autoopendownloadtab" />
+      <checkbox id="downloadbar-opt-atclnwhnffqt"
+                label="&downloadbaropt.atclnwhnffqt;"
+                accesskey="&downloadbaropt.atclnwhnffqt.ak;"
+                preference="autocleancompletedonquit" />
+      <checkbox id="downloadbar-opt-skcnfrmtnbfrdlt"
+                label="&downloadbaropt.skcnfrmtnbfrdlt;"
+                accesskey="&downloadbaropt.skcnfrmtnbfrdlt.ak;"
+                preference="askconfirmationbeforedelete" />
+      <checkbox id="downloadbar-opt-cntndwnldswhnbrwsrqts"
+                label="&downloadbaropt.cntndwnldswhnbrwsrqts;"
+                accesskey="&downloadbaropt.cntndwnldswhnbrwsrqts.ak;"
+                hidden="true"
+                preference="continuedownloadsonquit" />
+      <hbox align="center">
+        <checkbox id="downloadbar-opt-clsbrwhndwnldscmplt"
+                  label="&downloadbaropt.attclswhndlcmp;"
+                  accesskey="&downloadbaropt.attclswhndlcmp.ak;"
+                  preference="autoclosebarwhendownloadscomplete" />
+        <textbox id="downloadbar-opt-ttclsscnd"
+                 type="number" width="50"
+                 preference="autoclosesecond" />
+        <label value="&downloadbaropt.scnds;" />
+      </hbox>
+      <hbox align="center">
+        <label value="&downloadbaropt.dblclckdwnldtm;"
+               accesskey="&downloadbaropt.dblclckdwnldtm.ak;"
+               control="downloadbar-opt-dblclckctn" />
+        <menulist id="downloadbar-opt-dblclckctn"
+                  preference="doubleclickaction">
+          <menupopup>
+            <menuitem id="downloadbar-opt-lnch"
+                      label="&downloadbaropt.lnch;"
+                      value="Launch" />
+            <menuitem id="downloadbar-opt-shwmngr"
+                      label="&downloadbaropt.shwfl;"
+                      value="Show File" />
+          </menupopup>
+        </menulist>
+      </hbox>
+      <hbox align="center">
+        <label value="&downloadbaropt.ttclrthsfltyps;"
+               accesskey="&downloadbaropt.ttclrthsfltyps.ak;"
+               control="downloadbar-opt-ttclrfltyps" />
+        <textbox id="downloadbar-opt-ttclrfltyps" flex="1"
+                 preference="autoclearfiletypes" />
+        <label value="&downloadbaropt.ftr;" />
+        <textbox id="downloadbar-opt-ttclrscnd"
+                 type="number" width="50"
+                 preference="autoclearsecond" />
+        <label value="&downloadbaropt.scnds;" />
+      </hbox>
+    </groupbox>
+  </prefpane>
+  <prefpane id="appearancePane" label="&downloadbaropt.pprnc;">
+    <preferences>
+      <preference id="userinterface"
+                  name="extensions.mdownloadbar.userinterface"
+                  type="string"
+                  instantApply="true" />
+      <preference id="panelmaxheight"
+                  name="extensions.mdownloadbar.panelmaxheight"
+                  type="int"
+                  instantApply="true" />
+      <preference id="downloaditemwidth"
+                  name="extensions.mdownloadbar.downloaditemwidth"
+                  type="int"
+                  instantApply="true" />
+      <!--preference id="downloadbarheight"
+                  name="extensions.mdownloadbar.downloadbarheight"
+                  type="int"
+                  instantApply="true" /-->
+      <preference id="downloaditemheight"
+                  name="extensions.mdownloadbar.downloaditemheight"
+                  type="int"
+                  instantApply="true" />
+      <preference id="filenamefontsize"
+                  name="extensions.mdownloadbar.filenamefontsize"
+                  type="int"
+                  instantApply="true" />
+      <preference id="progressfontsize"
+                  name="extensions.mdownloadbar.progressfontsize"
+                  type="int"
+                  instantApply="true" />
+      <preference id="showprogressnotification"
+                  name="extensions.mdownloadbar.showprogressnotification"
+                  type="bool"
+                  instantApply="true" />
+      <preference id="showspeednotification"
+                  name="extensions.mdownloadbar.showspeednotification"
+                  type="bool"
+                  instantApply="true" />
+      <preference id="showremainingtimenotification"
+                  name="extensions.mdownloadbar.showremainingtimenotification"
+                  type="bool"
+                  instantApply="true" />
+      <preference id="progresnotifalign"
+                  name="extensions.mdownloadbar.progresnotifalign"
+                  type="string"
+                  instantApply="true" />
+      <preference id="slowestbandwidth"
+                  name="extensions.mdownloadbar.slowestbandwidth"
+                  type="int"
+                  instantApply="true" />
+      <preference id="slowestbandwidthcolor"
+                  name="extensions.mdownloadbar.slowestbandwidthcolor"
+                  type="string"
+                  instantApply="true" />
+      <preference id="averagebandwidth"
+                  name="extensions.mdownloadbar.averagebandwidth"
+                  type="int"
+                  instantApply="true" />
+      <preference id="averagespeedfirstbandwidthcolor"
+                  name="extensions.mdownloadbar.averagespeedfirstbandwidthcolor"
+                  type="string"
+                  instantApply="true" />
+      <preference id="fastestbandwidth"
+                  name="extensions.mdownloadbar.fastestbandwidth"
+                  type="int"
+                  instantApply="true" />
+      <preference id="averagespeedsecondbandwidthcolor"
+                  name="extensions.mdownloadbar.averagespeedsecondbandwidthcolor"
+                  type="string"
+                  instantApply="true" />
+      <preference id="fastestbandwidthcolor"
+                  name="extensions.mdownloadbar.fastestbandwidthcolor"
+                  type="string"
+                  instantApply="true" />
+      <preference id="hidedownmanagbutton"
+                  name="extensions.mdownloadbar.hidedownmanagbutton"
+                  type="bool"
+                  instantApply="true" />
+      <preference id="hidedownloadsbutton"
+                  name="extensions.mdownloadbar.hidedownloadsbutton"
+                  type="bool"
+                  instantApply="true" />
+      <preference id="hideclearbutton"
+                  name="extensions.mdownloadbar.hideclearbutton"
+                  type="bool"
+                  instantApply="true" />
+    </preferences>
+
+    <groupbox>
+      <caption>
+        <label value="&downloadbaropt.srntrfc;" />
+        <image id="mdbHelp02"
+               tooltiptext="&downloadbaropt.infotooltip;"
+               class="helpButton"
+               onclick="mdbPref.mdbHelp('02','&downloadbaropt.srntrfc;');" />
+      </caption>
+      <radiogroup id="downloadbar-opt-srntrfcrdgrp" orient="horizontal" preference="userinterface">
+        <vbox id="downloadbar-opt-radiobar">
+          <radio id="downloadbar-opt-dwnldbrrdio"
+                 label="&downloadbaropt.dnwldbr;"
+                 accesskey="&downloadbaropt.dnwldbr.ak;"
+                 value="bar"
+                 oncommand="mdbPref.modeDisplay()" />
+        </vbox>
+        <vbox id="downloadbar-opt-radiopanel">
+          <radio id="downloadbar-opt-dwnldpnlrdio"
+                 label="&downloadbaropt.dnwlpnl;"
+                 accesskey="&downloadbaropt.dnwlpnl.ak;"
+                 value="panel"
+                 oncommand="mdbPref.modeDisplay()" />
+          <hbox id="compact-panel-box" align="center" class="indent">
+            <label value="&downloadbaropt.dnwlpnlmaxheight;" />
+            <textbox id="compact-panel-height"
+                     type="number" width="50"
+                     min="100" increment="5"
+                     preference="panelmaxheight" />
+            <label value="&downloadbaropt.px;" />
+          </hbox>
+        </vbox>
+      </radiogroup>
+    </groupbox>
+    <separator class="thin" />
+    <tabbox id="downloadbar-opt-appearance">
+      <tabs>
+        <tab label="&downloadbaropt.bars;"
+             accesskey="&downloadbaropt.bars.ak;" />
+        <tab label="&downloadbaropt.clr;"
+             accesskey="&downloadbaropt.clr.ak;" />
+        <tab label="&downloadbaropt.buttons;"
+             accesskey="&downloadbaropt.buttons.ak;" />
+      </tabs>
+      <tabpanels id="downloadbar-opt-tabpanels">
+        <tabpanel id="downloadbar-opt-bars" orient="vertical">
+          <hbox>
+            <groupbox flex="1">
+              <caption class="tabsbgd">
+                <label value="&downloadbaropt.dwldtm;" />
+                <image id="mdbHelp03"
+                       tooltiptext="&downloadbaropt.infotooltip;"
+                       class="helpButton"
+                       onclick="mdbPref.mdbHelp('03','&downloadbaropt.dwldtm;');" />
+              </caption>
+              <grid flex="1">
+                <columns>
+                  <column />
+                  <column width="55" />
+                </columns>
+                <rows>
+                  <!--row align="center">
+                    <label value="&downloadbaropt.height; paska" />
+                    <textbox id="downloadbar-opt-dwnldtmhght"
+                             type="number" min="16"
+                             max="40"
+                             preference="downloadbarheight" />
+                  </row-->
+                  <row align="center">
+                    <label value="&downloadbaropt.width;"
+                           accesskey="&downloadbaropt.width.ak;"
+                           control="downloadbar-opt-dwnldtmwdth" />
+                    <textbox id="downloadbar-opt-dwnldtmwdth"
+                             type="number" min="120" max="250"
+                             increment="5"
+                             preference="downloaditemwidth" />
+                    <label value="&downloadbaropt.px;" />
+                  </row>
+                  <row align="center">
+                    <label value="&downloadbaropt.height;"
+                           accesskey="&downloadbaropt.height.ak;"
+                           control="downloadbar-opt-dwnldtmhght" />
+                    <textbox id="downloadbar-opt-dwnldtmhght"
+                             type="number" min="18"
+                             max="40"
+                             preference="downloaditemheight" />
+                    <label value="&downloadbaropt.px;" />
+                  </row>
+                  <row align="center">
+                    <label value="&downloadbaropt.flnmszfntsz;"
+                           accesskey="&downloadbaropt.flnmszfntsz.ak;"
+                           control="downloadbar-opt-flnmsz" />
+                    <textbox id="downloadbar-opt-flnmsz"
+                             type="number"
+                             preference="filenamefontsize" />
+                    <label value="&downloadbaropt.px;" />
+                  </row>
+                  <row align="center">
+                    <label value="&downloadbaropt.prgrssszfntsz;"
+                           accesskey="&downloadbaropt.prgrssszfntsz.ak;"
+                           control="downloadbar-opt-prgrsssz" />
+                    <textbox id="downloadbar-opt-prgrsssz"
+                             type="number"
+                             preference="progressfontsize" />
+                    <label value="&downloadbaropt.px;" />
+                  </row>
+                </rows>
+              </grid>
+            </groupbox>  
+            <groupbox flex="2">
+              <caption class="tabsbgd">
+                <label value="&downloadbaropt.prgrsntfcts;" />
+                <image id="mdbHelp04"
+                       tooltiptext="&downloadbaropt.infotooltip;"
+                       class="helpButton"
+                       onclick="mdbPref.mdbHelp('04','&downloadbaropt.prgrsntfcts;');" />
+              </caption>
+              <checkbox id="downloadbar-opt-prgrssntfct"
+                        label="&downloadbaropt.prgrssntfct;"
+                        accesskey="&downloadbaropt.prgrssntfct.ak;"
+                        preference="showprogressnotification" />
+              <checkbox id="downloadbar-opt-spdntfct"
+                        label="&downloadbaropt.spdntfct;"
+                        accesskey="&downloadbaropt.spdntfct.ak;"
+                        preference="showspeednotification" />
+              <checkbox id="downloadbar-opt-tmntfct"
+                        label="&downloadbaropt.tmntfct;"
+                        accesskey="&downloadbaropt.tmntfct.ak;"
+                        preference="showremainingtimenotification" />
+                <label value="&downloadbaropt.prgrsslgnmnt;:" />
+                <radiogroup id="downloadbar-opt-prgrsslngmntrdgrp" class="indent"
+                            preference="progresnotifalign">
+                  <radio id="downloadbar-opt-hrzntllgnmntrdio"
+                         label="&downloadbaropt.hrzntllgnmnt;"
+                         accesskey="&downloadbaropt.hrzntllgnmnt.ak;"
+                         value="horizontal" />
+                  <radio id="downloadbar-opt-vrtcllgnmntrdio"
+                         label="&downloadbaropt.vrtcllgnmnt;"
+                         accesskey="&downloadbaropt.vrtcllgnmnt.ak;"
+                         value="vertical" />
+                </radiogroup>
+            </groupbox>
+          </hbox>
+        </tabpanel>
+        <tabpanel id="downloadbar-opt-colors" orient="vertical">
+          <hbox>
+            <groupbox flex="1">
+              <caption class="tabsbgd">
+                <label value="&downloadbaropt.bars;" />
+                <image id="mdbHelp05"
+                       tooltiptext="&downloadbaropt.infotooltip;"
+                       class="helpButton"
+                       onclick="mdbPref.mdbHelp('05','&downloadbaropt.bars;');" />
+              </caption>
+              <grid flex="1">
+                <columns>
+                  <column />
+                  <column />
+                </columns>
+                <rows>
+                  <row align="center">
+                    <label value="&downloadbaropt.bckgndclr;"
+                           accesskey="&downloadbaropt.bckgndclr.ak;"
+                           control="downloadbar-opt-bckgndclr" />
+                    <button id="downloadbar-opt-bckgndclr"
+                            class="colorbutton"
+                            onclick="mdbPref.changeColor(this);">
+                      <hbox id="downloadbar-opt-colorbox1" flex="1"
+                            class="colorbox" />
+                    </button>
+                  </row>
+                  <row align="center">
+                    <label value="&downloadbaropt.dwnprgrssclr;"
+                           accesskey="&downloadbaropt.dwnprgrssclr.ak;"
+                           control="downloadbar-opt-dwnlprgrssclr" />
+                    <button id="downloadbar-opt-dwnlprgrssclr"
+                            class="colorbutton"
+                            onclick="mdbPref.changeColor(this);">
+                      <hbox id="downloadbar-opt-colorbox2" flex="1"
+                            class="colorbox" />
+                    </button>
+                  </row>
+                  <row align="center">
+                    <label value="&downloadbaropt.dwntxtclr;"
+                           accesskey="&downloadbaropt.dwntxtclr.ak;"
+                           control="downloadbar-opt-dwnldtxtclr" />
+                    <button id="downloadbar-opt-dwnldtxtclr"
+                            class="colorbutton"
+                            onclick="mdbPref.changeColor(this);">
+                      <hbox id="downloadbar-opt-colorbox3" flex="1"
+                            class="colorbox" />
+                    </button>
+                  </row>
+                  <row align="center">
+                    <label value="&downloadbaropt.dwncmpltclr;"
+                           accesskey="&downloadbaropt.dwncmpltclr.ak;"
+                           control="downloadbar-opt-dwncmpltclr" />
+                    <button id="downloadbar-opt-dwncmpltclr"
+                            class="colorbutton"
+                            onclick="mdbPref.changeColor(this);">
+                      <hbox id="downloadbar-opt-colorbox4" flex="1"
+                            class="colorbox" />
+                    </button>
+                  </row>
+                  <row align="center" hidden="true">
+                    <label value="&downloadbaropt.dwnbrdclr;"
+                           accesskey="&downloadbaropt.dwnbrdclr.ak;"
+                           control="downloadbar-opt-dwnbrdclr" />
+                    <button id="downloadbar-opt-dwnbrdclr"
+                            class="colorbutton"
+                            onclick="mdbPref.changeColor(this);">
+                      <hbox id="downloadbar-opt-colorbox5" flex="1"
+                            class="colorbox" />
+                    </button>
+                  </row>
+                  <row align="center">
+                    <label value="&downloadbaropt.dwnldpsclr;"
+                           accesskey="&downloadbaropt.dwnldpsclr.ak;"
+                           control="downloadbar-opt-dwnldpsclr" />
+                    <button id="downloadbar-opt-dwnldpsclr"
+                            class="colorbutton"
+                            onclick="mdbPref.changeColor(this);">
+                      <hbox id="downloadbar-opt-colorbox6" flex="1"
+                            class="colorbox" />
+                    </button>
+                  </row>
+                  <row align="center">
+                    <label value="&downloadbaropt.brbckgrndclr;"
+                           accesskey="&downloadbaropt.brbckgrndclr.ak;"
+                           control="downloadbar-opt-brbckgrndclr" />
+                    <button id="downloadbar-opt-brbckgrndclr"
+                            class="colorbutton"
+                            onclick="mdbPref.changeColor(this);">
+                      <hbox id="downloadbar-opt-colorbox7" flex="1"
+                            class="colorbox" />
+                    </button>
+                  </row>
+                </rows>
+              </grid>
+              <separator flex="1" />
+              <hbox id="downloadbar-opt-dwnclrrst" pack="end">
+                <button label="&downloadbaropt.rststtngs;" />
+              </hbox>
+            </groupbox>
+            <groupbox flex="1">
+              <caption class="tabsbgd">
+                <label value="&downloadbaropt.spdd;" />
+                <image id="mdbHelp06"
+                       tooltiptext="&downloadbaropt.infotooltip;"
+                       class="helpButton"
+                       onclick="mdbPref.mdbHelp('06','&downloadbaropt.spdd;');" />
+              </caption>
+              <grid flex="1">
+                <columns>
+                  <column />
+                  <column />
+                  <column width="60" />
+                  <column />
+                  <column />
+                </columns>
+                <rows>
+                  <row align="center">
+                    <label value="0" />
+                    <label value="-" />
+                    <textbox id="downloadbar-opt-slwstspdtxt"
+                             type="number"
+                             preference="slowestbandwidth" />
+                    <label value="KB/s" />
+                    <button id="downloadbar-opt-slwstspdclr"
+                            class="colorbutton"
+                            onclick="mdbPref.changeColor(this);">
+                      <hbox id="downloadbar-opt-colorbox8" flex="1"
+                            class="colorbox" />
+                    </button>
+                  </row>
+                  <row align="center">
+                    <label id="downloadbar-opt-vrgspdfrsttxtbxdsbld" value="" />
+                    <label value="-" />
+                    <textbox id="downloadbar-opt-vrgspdfrsttxtbx"
+                             type="number"
+                             preference="averagebandwidth" />
+                    <label value="KB/s" />
+                    <button id="downloadbar-opt-vrgspdfrstclr"
+                            class="colorbutton"
+                            onclick="mdbPref.changeColor(this);">
+                      <hbox id="downloadbar-opt-colorbox9" flex="1"
+                            class="colorbox" />
+                    </button>
+                  </row>
+                  <row align="center">
+                    <label id="downloadbar-opt-vrgspdscndtxtbxdsbld" value="" />
+                    <label value="-" />
+                    <textbox id="downloadbar-opt-vrgspdscndtxtbx"
+                             type="number"
+                             preference="fastestbandwidth" />
+                    <label value="KB/s" />
+                    <button id="downloadbar-opt-vrgspdscndclr"
+                            class="colorbutton"
+                            onclick="mdbPref.changeColor(this);">
+                      <hbox id="downloadbar-opt-colorbox10" flex="1"
+                            class="colorbox" />
+                    </button>
+                  </row>
+                  <row align="center">
+                    <label value="" />
+                    <label value="&gt;" />
+                    <label id="downloadbar-opt-fststtxtbxdsbld" value="" />
+                    <label value="KB/s" />
+                    <button id="downloadbar-opt-fstsspdclr"
+                            class="colorbutton"
+                            onclick="mdbPref.changeColor(this);">
+                      <hbox id="downloadbar-opt-colorbox11" flex="1"
+                            class="colorbox" />
+                    </button>
+                  </row>
+                </rows>
+              </grid>
+              <separator flex="1" />
+              <hbox id="downloadbar-opt-spdclrrst" pack="end">
+                <button label="&downloadbaropt.rststtngs;" />
+              </hbox>
+            </groupbox>
+          </hbox>
+        </tabpanel>
+        <tabpanel id="downloadbar-opt-buttons" orient="vertical">
+          <groupbox>
+              <caption class="tabsbgd">
+                <label value="&downloadbaropt.shhidebttn;" />
+                <image id="mdbHelp07"
+                       tooltiptext="&downloadbaropt.infotooltip;"
+                       class="helpButton"
+                       onclick="mdbPref.mdbHelp('07','&downloadbaropt.shhidebttn;');" />
+              </caption>
+            <checkbox id="downloadbar-opt-maindownbttn"
+                      label="&downloadbaropt.hddmbttn;"
+                      accesskey="&downloadbaropt.hddmbttn.ak;"
+                      preference="hidedownmanagbutton" />
+            <checkbox id="downloadbar-opt-hddwnldsbttn"
+                      label="&downloadbaropt.hddwnldsbttn;"
+                      accesskey="&downloadbaropt.hddwnldsbttn.ak;"
+                      preference="hidedownloadsbutton" />
+            <checkbox id="downloadbar-opt-hdclrbttn"
+                      label="&downloadbaropt.hdclrbttn;"
+                      accesskey="&downloadbaropt.hdclrbttn.ak;"
+                      preference="hideclearbutton" />
+          </groupbox>
+        </tabpanel>
+      </tabpanels>
+    </tabbox>
+  </prefpane>
+  <prefpane id="miscPane" label="&downloadbaropt.misc;">
+    <preferences>
+      <preference id="automaticviruscan"
+                  name="extensions.mdownloadbar.automaticviruscan"
+                  type="bool"
+                  instantApply="true" />
+      <preference id="viruscanpath"
+                  name="extensions.mdownloadbar.viruscanpath"
+                  type="string" />
+      <preference id="disablescanfor"
+                  name="extensions.mdownloadbar.disablescanfor"
+                  type="string" />
+      <preference id="virusscanarguments"
+                  name="extensions.mdownloadbar.virusscanarguments"
+                  type="string" />
+      <preference id="playsound"
+                  name="extensions.mdownloadbar.playsound"
+                  type="bool"
+                  instantApply="true" />
+      <preference id="audioplayerpath"
+                  name="extensions.mdownloadbar.audioplayerpath"
+                  type="string" />
+      <preference id="downBarCtrl"
+                  name="extensions.mdownloadbar.downBarCtrl"
+                  type="bool"
+                  instantApply="true" />
+      <preference id="downBarAlt"
+                  name="extensions.mdownloadbar.downBarAlt"
+                  type="bool"
+                  instantApply="true" />
+      <preference id="downBarShift"
+                  name="extensions.mdownloadbar.downBarShift"
+                  type="bool"
+                  instantApply="true" />
+      <preference id="downBarKeycode"
+                  name="extensions.mdownloadbar.downBarKeycode"
+                  type="string"
+                  instantApply="true" />
+    </preferences>
+    <groupbox>
+      <caption>
+        <label value="&downloadbaropt.vrscn;" />
+        <image id="mdbHelp08"
+               tooltiptext="&downloadbaropt.infotooltip;"
+               class="helpButton"
+               onclick="mdbPref.mdbHelp('08','&downloadbaropt.vrscn;');" />
+      </caption>
+      <checkbox id="downloadbar-opt-tmtcvrsscan"
+                label="&downloadbaropt.ttscndwnldfl;"
+                accesskey="&downloadbaropt.ttscndwnldfl.ak;"
+                preference="automaticviruscan" />
+      <hbox align="center">
+        <label value="&downloadbaropt.vrscnnrpth;"
+               accesskey="&downloadbaropt.vrscnnrpth.ak;"
+               control="downloadbar-opt-vrsscnpath" />
+        <textbox id="downloadbar-opt-vrsscnpath"
+                 flex="1" preference="viruscanpath" />
+        <button id="downloadbar-opt-vrsscnbtn"
+                label="&downloadbaropt.dofllct;"
+                oncommand="mdbPref.locateScan();" />
+      </hbox>
+      <hbox align="center">
+        <label value="&downloadbaropt.dsbscnfltyps;"
+               accesskey="&downloadbaropt.dsbscnfltyps.ak;"
+               control="downloadbar-opt-scnxcldfltyps" />
+        <textbox id="downloadbar-opt-scnxcldfltyps"
+                 flex="1" preference="disablescanfor" />
+      </hbox>
+      <hbox align="center">
+        <label value="&downloadbaropt.vrsscnrgmnts;"
+               accesskey="&downloadbaropt.vrsscnrgmnts.ak;"
+               control="downloadbar-opt-vrsscnrgmnts" />
+        <textbox id="downloadbar-opt-vrsscnrgmnts"
+                 flex="1" preference="virusscanarguments" />
+      </hbox>
+    </groupbox>
+    <separator class="thin" />
+    <groupbox>
+      <caption>
+        <label value="&downloadbaropt.ntfctn;" />
+        <image id="mdbHelp09"
+               tooltiptext="&downloadbaropt.infotooltip;"
+               class="helpButton"
+               onclick="mdbPref.mdbHelp('09','&downloadbaropt.ntfctn;');" />
+      </caption>
+      <checkbox id="downloadbar-opt-plysndwhncdwnldcomlts"
+                label="&downloadbaropt.plysndwhncdwnldcomlts;"
+                accesskey="&downloadbaropt.plysndwhncdwnldcomlts.ak;"
+                preference="playsound" />
+      <hbox align="center">
+        <label value="&downloadbaropt.doflpth;"
+               accesskey="&downloadbaropt.doflpth.ak;"
+               control="downloadbar-opt-doflpth" />
+        <textbox id="downloadbar-opt-doflpth" flex="1"
+                 preference="audioplayerpath" />
+        <button id="downloadbar-opt-dofllct"
+                label="&downloadbaropt.dofllct;"
+                oncommand="mdbPref.locateSound();" />
+      </hbox>
+      <separator class="thin" />
+      <hbox align="center" flex="1">
+        <label value="&downloadbaropt.prvwsnd;" />
+        <vbox flex="1">
+          <html:audio src="" id="downloadbar-opt-doplyr" preload="auto" controls="controls"></html:audio>
+        </vbox>
+        <spacer width="5px" />
+      </hbox>
+      <separator class="thin" />
+      <hbox pack="end" id="downloadbar-opt-plysndrst">
+        <button label="&downloadbaropt.rststtngs;" />
+      </hbox>
+    </groupbox>
+    <separator class="thin" />
+    <groupbox>
+      <caption>
+        <label value="&downloadbaropt.shtcaption;" />
+        <image id="mdbHelp09"
+               tooltiptext="&downloadbaropt.infotooltip;"
+               class="helpButton"
+               onclick="mdbPref.mdbHelp('10','&downloadbaropt.shtcaption;');" />
+      </caption>
+      <hbox>
+        <checkbox id="ctrlCheckbox"
+                  label="&downloadbaropt.shtcontrol;"
+                  accesskey="&downloadbaropt.shtcontrol.ak;"
+                  preference="downBarCtrl" />
+        <checkbox id="altCheckbox"
+                  label="&downloadbaropt.shtalt;"
+                  accesskey="&downloadbaropt.shtalt.ak;"
+                  preference="downBarAlt" />
+        <checkbox id="shiftCheckbox"
+                  label="&downloadbaropt.shtshift;"
+                  accesskey="&downloadbaropt.shtshift.ak;"
+                  preference="downBarShift" />
+        <menulist id="downBarKeyset-menu"
+                  preference="downBarKeycode">
+          <menupopup id="addonBarKeyset-menupopup" maxheight="250">
+            <menuitem value="A" label="A" />
+            <menuitem value="B" label="B" />
+            <menuitem value="C" label="C" />
+            <menuitem value="D" label="D" />
+            <menuitem value="E" label="E" />
+            <menuitem value="F" label="F" />
+            <menuitem value="G" label="G" />
+            <menuitem value="H" label="H" />
+            <menuitem value="I" label="I" />
+            <menuitem value="J" label="J" />
+            <menuitem value="K" label="K" />
+            <menuitem value="L" label="L" />
+            <menuitem value="M" label="M" />
+            <menuitem value="N" label="N" />
+            <menuitem value="O" label="O" />
+            <menuitem value="P" label="P" />
+            <menuitem value="Q" label="Q" />
+            <menuitem value="R" label="R" />
+            <menuitem value="S" label="S" />
+            <menuitem value="T" label="T" />
+            <menuitem value="U" label="U" />
+            <menuitem value="V" label="V" />
+            <menuitem value="W" label="W" />
+            <menuitem value="X" label="X" />
+            <menuitem value="Y" label="Y" />
+            <menuitem value="Z" label="Z" />
+            <menuitem value=" " label="&downloadbaropt.shtspacebar;" />
+            <menuitem value="VK_ESCAPE" label="Esc" />
+            <menuitem value="VK_TAB" label="Tab" />
+            <menuitem value="VK_PAGE_UP" label="Page Up" />
+            <menuitem value="VK_PAGE_DOWN" label="Page Down" />
+            <menuitem value="VK_INSERT" label="Insert" />
+            <menuitem value="VK_DELETE" label="Delete" />
+            <menuitem value="VK_HOME" label="Home" />
+            <menuitem value="VK_END" label="End" />
+            <menuitem value="VK_UP" label="↑" />
+            <menuitem value="VK_DOWN" label="↓" />
+            <menuitem value="VK_LEFT" label="←" />
+            <menuitem value="VK_RIGHT" label="→" />
+            <menuitem value="[" label="[" />
+            <menuitem value="]" label="]" />
+            <menuitem value="." label="." />
+            <menuitem value="," label="," />
+            <menuitem value=";" label=";" />
+            <menuitem value="/" label="/" />
+            <menuitem value="\" label="\" />
+            <menuitem value="=" label="=" />
+            <menuitem value="+" label="+" />
+            <menuitem value="-" label="-" />
+            <menuitem value="*" label="*" />
+            <menuitem value="VK_F1" label="F1" />
+            <menuitem value="VK_F2" label="F2" />
+            <menuitem value="VK_F3" label="F3" />
+            <menuitem value="VK_F4" label="F4" />
+            <menuitem value="VK_F5" label="F5" />
+            <menuitem value="VK_F6" label="F6" />
+            <menuitem value="VK_F7" label="F7" />
+            <menuitem value="VK_F8" label="F8" />
+            <menuitem value="VK_F9" label="F9" />
+            <menuitem value="VK_F10" label="F10" />
+            <menuitem value="VK_F11" label="F11" />
+            <menuitem value="VK_F12" label="F12" />
+          </menupopup>
+        </menulist>
+      </hbox>
+    </groupbox>
+  </prefpane>
+
+  <stringbundleset>
+    <stringbundle id="downloadbar-prprts" src="chrome://downloadbar/locale/browserOverlay.properties" />
+  </stringbundleset>
+
+  <script type="application/x-javascript" src="chrome://downloadbar/content/options.js" />
+
+</prefwindow>

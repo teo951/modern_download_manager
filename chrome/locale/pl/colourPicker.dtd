@@ -1,0 +1,25 @@
+<!ENTITY previewColour.label       "Podgląd:">
+<!ENTITY dialog.title              "Wybór koloru">
+
+<!ENTITY predef.label              "Kolory podstawowe:">
+
+<!ENTITY rgb.label                 "RGB">
+<!ENTITY hsb.label                 "HSB">
+
+<!ENTITY red.label                 "Czerwony:">
+<!ENTITY green.label               "Zielony:">
+<!ENTITY blue.label                "Niebieski:">
+
+<!ENTITY hue.label                 "Odcień:">
+<!ENTITY saturation.label          "Nasycenie:">
+<!ENTITY brightness.label          "Jasnoość:">
+
+<!ENTITY transparency.label        "Przezroczystość">
+<!ENTITY opacity.label             "Krycie:">
+
+<!ENTITY lastPickedColor.label     "Ostatnio wybrany kolor">
+<!ENTITY lastPickedColor.accessKey "O">
+
+<!ENTITY hexColor.label            "Hex:">
+<!ENTITY nameColor.label           "Nazwa:">
+<!ENTITY resetDefault.label        "Przywróć domyślny">

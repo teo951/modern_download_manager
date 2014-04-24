@@ -1,0 +1,58 @@
+<!--Menu displayed after right click download-->
+<!ENTITY downloadbar.lnch "Uruchom">
+<!ENTITY downloadbar.shwfl "Pokaż plik">
+<!ENTITY downloadbar.shwmngr "Wyświetl historię pobierania">
+<!ENTITY downloadbar.vrscn "Skanuj plik">
+<!ENTITY downloadbar.chksm "Suma kontrolna">
+<!ENTITY downloadbar.rnm "Zmień nazwę">
+<!ENTITY downloadbar.sendto "Wyślij do">
+<!ENTITY downloadbar.desktopfolder "Pulpit">
+<!ENTITY downloadbar.downloadsfolder "Folder Pobrane">
+<!ENTITY downloadbar.customfolder "Określ folder…">
+<!ENTITY downloadbar.dltfl "Usuń plik">
+<!ENTITY downloadbar.gtdwnlpg "Przejdź do strony pobierania">
+<!ENTITY downloadbar.cpydwnldlnk "Kopiuj odnośnik pobrania">
+<!ENTITY downloadbar.cncl "Anuluj">
+<!ENTITY downloadbar.resume "Wznów">
+<!ENTITY downloadbar.pause "Wstrzymaj">
+<!ENTITY downloadbar.clr "Wyczyść">
+<!ENTITY downloadbar.clrll "Wyczyść wszystko">
+<!--Menu displayed after click Menu button-->
+<!ENTITY downloadbar.clsbr "Ukryj pasek">
+<!ENTITY downloadbar.hlp "Pomoc">
+<!ENTITY downloadbar.dwnlds "Pobieranie">
+<!ENTITY downloadbar.pslldwnlds "Wstrzymaj wszystkie pobrania">
+<!ENTITY downloadbar.rsmlldwnlds "Wznów wszystkie pobrania">
+<!ENTITY downloadbar.cncllldwnlds "Anuluj wszystkie pobrania">
+<!ENTITY downloadbar.clrlldwnlds "Wyczyść wszystkie pobrane">
+<!ENTITY downloadbar.pndwnldtb "Otwórz pobrania w karcie">
+<!ENTITY downloadbar.shwlldwnldshstry "Wyświetl historię pobierania">
+<!ENTITY downloadbar.sttstcs "Statystyki">
+<!ENTITY downloadbar.compactmode "Tryb kompaktowy">
+<!ENTITY downloadbar.ptns "Ustawienia">
+<!--Panel displayed after download hover or left click-->
+<!ENTITY downloadbar.src "Źródło">
+<!ENTITY downloadbar.trgt "Plik docelowy">
+<!ENTITY downloadbar.vrgspd "Średnia prędkość">
+<!ENTITY downloadbar.crrntspd "Aktualna prędkość">
+<!ENTITY downloadbar.prgrs "Postęp">
+<!ENTITY downloadbar.rmngtm "Pozostały czas">
+<!ENTITY downloadbar.dwnldtm "Czas pobierania">
+<!ENTITY downloadbar.dwnldbyt "Pobrano">
+<!ENTITY downloadbar.flsz "Rozmiar pliku">
+<!ENTITY downloadbar.md5hsh "Suma kontrolna MD5">
+<!--Compact mode panel-->
+<!ENTITY downloadbar.nodownld "Nie ma pobrań">
+<!ENTITY downloadbar.downintab "Pobrania w karcie">
+<!ENTITY downloadbar.downhistry "Historia pobierania">
+<!ENTITY downloadbar.standardmode "Tryb paska">
+<!ENTITY downloadbar.closepan "Zamknij panel">
+<!--Menu displayed after right click Source or Target elements in the info panel-->
+<!ENTITY downloadbar.cpy "Kopiuj">
+<!--Item label in the Tools menu and menu panel-->
+<!ENTITY downloadbar.tbarbttn "Wyświetl/ukryj pobrania">
+<!--Toolbarbutton and tooltiptext label in the navigation bar and menu panel-->
+<!ENTITY downloadbar.tbarbttnlabel "Pobieranie">
+<!ENTITY downloadbar.tbarbttnlabel.tip "Menedżer pobierania">
+<!--Label of the button in the download bar -->
+<!ENTITY downloadbar.menu "Menu">

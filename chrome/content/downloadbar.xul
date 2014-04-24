@@ -1,0 +1,475 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://browser/skin/customizableui/panelUIOverlay.css" type="text/css"?>
+<?xml-stylesheet href="chrome://downloadbar/skin/downloadbar.css" type="text/css"?>
+<?xml-stylesheet href="chrome://downloadbar/skin/panelbuttons.css" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://downloadbar/locale/browserOverlay.dtd">
+
+<overlay id="downloadbar-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+         xmlns:html="http://www.w3.org/1999/xhtml">
+
+  <script type="application/x-javascript" src="chrome://downloadbar/content/browserOverlay.js" />
+
+  <stringbundleset>
+    <stringbundle id="downloadbar-prprts" src="chrome://downloadbar/locale/browserOverlay.properties" />
+  </stringbundleset>
+  
+  <commandset>
+    <command id="mdb-panelbarhide-command" oncommand="mdbOverlay.panelbarhide();" />
+  </commandset>
+
+  <popupset id="mainPopupSet">
+    <menupopup id="downloadsbar-statusbar-menu"
+               orient="vertical"
+               onpopupshowing="mdbOverlay.pop(event);">
+      <menuitem id="downloadsbar-slmenu"
+                class="menuitem-iconic"
+                label="&downloadbar.lnch;"
+                oncommand="mdbOverlay.run();" />
+      <menuseparator id="downloadsbar-slmenusp" />
+      <menuitem id="downloadsbar-shwfl"
+                class="menuitem-iconic"
+                label="&downloadbar.shwfl;"
+                oncommand="mdbOverlay.showfile();" />
+      <menuitem id="downloadsbar-shwmngr"
+                class="menuitem-iconic"
+                label="&downloadbar.shwmngr;"
+                oncommand="mdbOverlay.shwlldwnldshstry();" />
+      <menuitem id="downloadsbar-vrscn"
+                class="menuitem-iconic"
+                label="&downloadbar.vrscn;"
+                oncommand="mdbOverlay.scan();" />
+      <menuitem id="downloadsbar-chksm"
+                class="menuitem-iconic"
+                label="&downloadbar.chksm;"
+                oncommand="mdbOverlay.checksum();" />
+      <menuitem id="downloadsbar-rnm"
+                class="menuitem-iconic"
+                label="&downloadbar.rnm;"
+                oncommand="mdbOverlay.rnmnw();" />
+      <menu id="downloadsbar-sendto"
+            class="menu-iconic" 
+            label="&downloadbar.sendto;"
+            oncommand="mdbOverlay.sendto(event);">
+        <menupopup id="downloadsbar-sendtomn"
+                   orient="vertical"
+                   onpopupshowing="mdbOverlay.sendtopop(event);">
+          <menuitem id="downloadsbar-sendto-desktp"
+                    class="menuitem-iconic"
+                    label="&downloadbar.desktopfolder;" />
+          <menuitem id="downloadsbar-sendto-dwnlds"
+                    class="menuitem-iconic"
+                    label="&downloadbar.downloadsfolder;" />
+          <menuseparator/>
+          <menuitem id="downloadsbar-sendto-cstm"
+                    class="menuitem-iconic"
+                    label="&downloadbar.customfolder;" />
+        </menupopup>
+      </menu>
+      <menuitem id="downloadsbar-dltfl"
+                class="menuitem-iconic"
+                label="&downloadbar.dltfl;"
+                oncommand="mdbOverlay.dltfl();" />
+      <menuseparator />
+      <menuitem id="downloadsbar-gtdwnlpg"
+                class="menuitem-iconic"
+                label="&downloadbar.gtdwnlpg;"
+                oncommand="mdbOverlay.gtdwnlpg();" />
+      <menuitem id="downloadsbar-cpydwnldlnk"
+                class="menuitem-iconic"
+                label="&downloadbar.cpydwnldlnk;"
+                oncommand="mdbOverlay.cpydwnldlnk();" />
+      <menuseparator />
+      <menuitem id="downloadsbar-cncl"
+                class="menuitem-iconic"
+                label="&downloadbar.cncl;"
+                oncommand="mdbOverlay.cancel();" />
+      <menuitem id="downloadsbar-strt"
+                class="menuitem-iconic"
+                label="&downloadbar.resume;"
+                oncommand="mdbOverlay.start();" />
+      <menuitem id="downloadsbar-pause"
+                class="menuitem-iconic"
+                label="&downloadbar.pause;"
+                oncommand="mdbOverlay.pause();" />
+      <menuseparator id="downloadsbar-ctnsmns" />
+      <menuitem id="downloadsbar-clr"
+                class="menuitem-iconic"
+                label="&downloadbar.clr;"
+                oncommand="mdbOverlay.clear();" />
+      <menuitem id="downloadsbar-clrll"
+                class="menuitem-iconic"
+                label="&downloadbar.clrll;"
+                oncommand="mdbOverlay.clearall();"
+                hidden="true" />
+    </menupopup>
+
+    <menupopup id="downloadsbar-downnloads-menu"
+               orient="vertical">
+      <menuitem id="downloadsbar-dmclose"
+                class="menuitem-iconic" 
+                label="&downloadbar.clsbr;"
+                oncommand="mdbOverlay.closebar();" />
+      <menuseparator id="downloadsbar-dmclosems" />
+      <menuitem id="downloadsbar-help"
+                class="menuitem-iconic"
+                label="&downloadbar.hlp;"
+                oncommand="mdbOverlay.help();" />
+      <menuseparator />
+      <menu id="downloadsbar-dwnlds"
+            label="&downloadbar.dwnlds;"
+            class="menu-iconic">
+        <menupopup id="downloadsbar-downnloads-submenu"
+                   orient="vertical">
+          <menuitem id="downloadsbar-pslldwnlds"
+                    class="menuitem-iconic"
+                    label="&downloadbar.pslldwnlds;"
+                    oncommand="mdbOverlay.pauseall();" />
+          <menuitem id="downloadsbar-rsmlldwnlds"
+                    class="menuitem-iconic"
+                    label="&downloadbar.rsmlldwnlds;"
+                    oncommand="mdbOverlay.resumeall();" />
+          <menuitem id="downloadsbar-cncllldwnlds"
+                    class="menuitem-iconic"
+                    label="&downloadbar.cncllldwnlds;"
+                    oncommand="mdbOverlay.cancelall();" />
+          <menuseparator/>
+          <menuitem id="downloadsbar-dmclearall"
+                    class="menuitem-iconic"
+                    label="&downloadbar.clrlldwnlds;"
+                    oncommand="mdbOverlay.clearall();" />
+        </menupopup>
+      </menu>
+      <menuseparator />
+      <menuitem id="downloadsbar-dwnldtb" 
+                class="menuitem-iconic"
+                label="&downloadbar.pndwnldtb;"
+                oncommand="mdbOverlay.pndwnldtb();" />
+      <menuitem id="downloadsbar-shwDwnldsHstry" 
+                class="menuitem-iconic"
+                label="&downloadbar.shwlldwnldshstry;"
+                oncommand="mdbOverlay.shwlldwnldshstry();" />
+      <!--menuitem id="downloadsbar-sttstcs"
+                class="menuitem-iconic"
+                label="&downloadbar.sttstcs;"
+                oncommand="mdbOverlay.sttstcs();" /-->
+      <menuseparator />
+      <menuitem id="downloadsbar-compactmode" 
+                class="menuitem-iconic"
+                label="&downloadbar.compactmode;"
+                oncommand="mdbOverlay.modePanel();" />
+      <menuseparator />
+      <menuitem id="downloadsbar-ptns" 
+                class="menuitem-iconic"
+                label="&downloadbar.ptns;"
+                oncommand="mdbOverlay.pnptnsdlg();" />
+    </menupopup>
+
+    <menupopup id="downloadsbar-downnloads-panbutclickmenu"
+               orient="vertical">
+      <menuitem id="downloadsbar-pslldwnlds"
+                class="menuitem-iconic"
+                label="&downloadbar.pslldwnlds;"
+                oncommand="mdbOverlay.pauseall();" />
+      <menuitem id="downloadsbar-rsmlldwnlds"
+                class="menuitem-iconic"
+                label="&downloadbar.rsmlldwnlds;"
+                oncommand="mdbOverlay.resumeall();" />
+      <menuitem id="downloadsbar-cncllldwnlds"
+                class="menuitem-iconic"
+                label="&downloadbar.cncllldwnlds;"
+                oncommand="mdbOverlay.cancelall();" />
+      <menuseparator/>
+      <menuitem id="downloadsbar-dmclearall"
+                class="menuitem-iconic"
+                label="&downloadbar.clrlldwnlds;"
+                oncommand="mdbOverlay.clearall();" />
+    </menupopup>
+
+    <panel id="downloadbar-itempanel"
+           type="arrow"
+           orient="vertical"
+           level="parent"
+           activeid=""
+           flip="slide"
+           onpopupshowing="mdbOverlay.pnlpop(event);"
+           onpopuphiding="mdbOverlay.pnlhid(event);">
+      <hbox align="center" style="padding:0px 4px 4px 4px;">
+        <image id="downloadbar-itempanel-imgcn" src="" />
+        <label id="downloadbar-itempanel-flnmbl" value="" />
+        <spacer flex="1" />
+        <toolbarbutton id="downloadbar-itempanel-closebutton"
+                       tooltiptext="&downloadbar.closepan;"
+                       oncommand="hidePopup()" />
+      </hbox>
+      <hbox>
+        <grid flex="1">
+          <columns>
+            <column />
+            <column />
+          </columns>
+          <rows id="downloadbar-panel-rows">
+            <row>
+              <hbox align="right">
+                <label value="&downloadbar.src;" />:
+              </hbox>
+              <hbox id="downloadbar-itempanel-src">
+                <label id="downloadbar-itempanel-srclbl" value=""
+                       crop="center" context="downloadsbar-copy-menu"
+                       onclick="if(event.button == 0) mdbOverlay.gtsrc();" />
+              </hbox>
+            </row>
+            <row>
+              <hbox align="right">
+                <label value="&downloadbar.trgt;" />:
+              </hbox>
+              <hbox id="downloadbar-itempanel-trgtvlhb">
+                <label id="downloadbar-itempanel-trgtlbl" value=""
+                       crop="center" context="downloadsbar-copy-menu"
+                       onclick="if(event.button == 0) mdbOverlay.showtrgt();" />
+              </hbox>
+            </row>
+            <row>
+              <hbox align="right" id="downloadbar-itempanel-vrgspdnmhb">
+                <label value="&downloadbar.vrgspd;" />:
+              </hbox>
+              <hbox id="downloadbar-itempanel-vrgspdvlhb">
+                <label id="downloadbar-itempanel-vrgspdlbl" value="" />
+              </hbox>
+            </row>
+            <row>
+              <hbox align="right" id="downloadbar-itempanel-crrntspdnmhb">
+                <label value="&downloadbar.crrntspd;" />:
+              </hbox>
+              <hbox id="downloadbar-itempanel-crrntspdvlhb">
+                <label id="downloadbar-itempanel-crrntspdlbl" value="" />
+              </hbox>
+            </row>
+            <row>
+              <hbox align="right">
+                <label value="&downloadbar.prgrs;" />:
+              </hbox>
+              <label id="downloadbar-itempanel-pgrsslbl" value="" />
+            </row>
+            <row>
+              <hbox align="right" id="downloadbar-itempanel-rmngtmnmhb">
+                <label value="&downloadbar.rmngtm;" />:
+              </hbox>
+              <hbox id="downloadbar-itempanel-rmngtmvlhb">
+                <label id="downloadbar-itempanel-rmngtmlbl" value="" />
+              </hbox>
+            </row>
+            <row>
+              <hbox align="right" id="downloadbar-itempanel-dwnldtmnmhb">
+                <label value="&downloadbar.dwnldtm;" />:
+              </hbox>
+              <hbox id="downloadbar-itempanel-dwnldtmvlhb">
+                <label id="downloadbar-itempanel-dwnldtmlbl" value="" />
+              </hbox>
+            </row>
+            <row>
+              <hbox align="right" id="downloadbar-itempanel-dwnldbytnmhb">
+                <label value="&downloadbar.dwnldbyt;" />:
+              </hbox>
+              <hbox id="downloadbar-itempanel-dwnldbytvlhb">
+                <label id="downloadbar-itempanel-dwnldbytlbl" value="" />
+              </hbox>
+            </row>
+            <row>
+              <hbox align="right" id="downloadbar-itempanel-flsznmhb">
+                <label id="downloadbar-itempanel-flsznmhb" value="&downloadbar.flsz;" />:
+              </hbox>
+              <hbox id="downloadbar-itempanel-flszvlhb">
+                <label id="downloadbar-itempanel-flszlbl" value="" />
+              </hbox>
+            </row>
+            <row>
+              <hbox align="right" id="downloadbar-itempanel-flhshnmhb">
+                <label value="&downloadbar.md5hsh;" />:
+              </hbox>
+              <hbox id="downloadbar-itempanel-flhshvlhb">
+                <label id="downloadbar-itempanel-flhshlbl" value="" />
+              </hbox>
+            </row>
+          </rows>
+        </grid>
+        <vbox id="downloadbar-ppprvwimgwrp" align="center" pack="center">
+          <image id="downloadbar-ppprvwimg" src="" onclick="mdbOverlay.pnprvw();" />
+        </vbox>
+      </hbox>
+    </panel>
+
+    <panel id="downloadbar-panel"
+           type="arrow"
+           footertype="promobox"
+           noautohide="true"
+           orient="vertical"
+           onpopupshowing="mdbOverlay.dwnldpnlpop();"
+           onpopuphidden="mdbOverlay.dwnldpnlpopdisplay();">
+      <vbox id="downloadbar-panelbox" flex="1">
+        <arrowscrollbox id="downloadbar-downloadpanel"
+                        orient="vertical" flex="1">
+          <hbox id="downloadbar-pnlbll" align="center" pack="center">
+            <label value="&downloadbar.nodownld;" />
+          </hbox>
+        </arrowscrollbox>
+        <hbox id="footerbox" class="panel-promo-box mdbpromo" flex="1"
+              align="center" minheight="25">
+          <toolbarbutton id="downloadbar-controlsbutton"
+                         onmouseover="mdbOverlay.panbutclick();"
+                         onmouseout="mdbOverlay.mouseOut();" />
+          <toolbarbutton id="downloadbar-openintabbutton"
+                         tooltiptext="&downloadbar.downintab;"
+                         oncommand="mdbOverlay.pndwnldtb();" />
+          <toolbarbutton id="downloadbar-histrybutton"
+                         tooltiptext="&downloadbar.downhistry;"
+                         oncommand="mdbOverlay.shwlldwnldshstry();" />
+          <toolbarbutton id="downloadbar-changemodebutton"
+                         tooltiptext="&downloadbar.standardmode;"
+                         oncommand="mdbOverlay.modeBar();" />
+          <toolbarbutton id="downloadbar-settingsbutton"
+                         tooltiptext="&downloadbar.ptns;"
+                         oncommand="mdbOverlay.pnptnsdlg();" />
+          <toolbarbutton id="downloadbar-helpbutton"
+                         tooltiptext="&downloadbar.hlp;"
+                         oncommand="mdbOverlay.help();" />
+          <!--hbox align="center" flex="1">
+            <description class="panel-promo-message" flex="1">Lorem</description>
+          </hbox-->
+          <spacer flex="1" />
+          <toolbarbutton class="panel-promo-closebutton close-icon"
+                         tooltiptext="&downloadbar.closepan;"
+                         oncommand="mdbOverlay.buttonclick()" />
+        </hbox>
+      </vbox>
+    </panel>
+
+    <panel id="PanelUI-popup">
+      <panelmultiview id="PanelUI-multiView" mainViewId="PanelUI-mainView">
+        <panelview id="downloadbar-auspanel" flex="1" noautohide="true">
+          <label value="&downloadbar.tbarbttn;" class="panel-subview-header"/>
+          <vbox id="downloadbar-subview" class="panel-subview-body">
+            <vbox id="downloadbar-panelbox" class="auspaneltlbr">
+              <arrowscrollbox id="downloadbar-downloadpanel"
+                              orient="vertical" flex="1">
+                <hbox id="downloadbar-pnlbll" align="center" pack="center">
+                  <label value="&downloadbar.nodownld;" />
+                </hbox>
+              </arrowscrollbox>
+            </vbox>
+            <menuseparator/>
+            <toolbarbutton id="downloadbar-ausopenintabbutton"
+                           class="subviewbutton cui-withicon"
+                           label="&downloadbar.downintab;"
+                           oncommand="mdbOverlay.pndwnldtb();" />
+            <toolbarbutton id="downloadbar-aushistrybutton"
+                           class="subviewbutton cui-withicon"
+                           label="&downloadbar.downhistry;"
+                           oncommand="mdbOverlay.shwlldwnldshstry();" />
+            <toolbarbutton id="downloadbar-auschangemodebutton"
+                           class="subviewbutton cui-withicon"
+                           label="&downloadbar.standardmode;"
+                           oncommand="mdbOverlay.modeBar();" />
+            <toolbarbutton id="downloadbar-aussettingsbutton"
+                           class="subviewbutton cui-withicon"
+                           label="&downloadbar.ptns;"
+                           oncommand="mdbOverlay.pnptnsdlg();" />
+            <toolbarbutton id="downloadbar-aushelpbutton"
+                           class="subviewbutton cui-withicon"
+                           label="&downloadbar.hlp;"
+                           oncommand="mdbOverlay.help();" />
+            <toolbarbutton id="downloadbar-auscontrolsbutton"
+                           class="subviewbutton cui-withicon"
+                           label="&downloadbar.dwnlds;"
+                           type="menu">
+              <menupopup id="downloadsbar-downnloads-menupnl"
+                         class="cui-widget-panel cui-widget-panelview PanelUI-subView"
+                         placespopup="true"
+                         orient="vertical">
+                <menuitem id="downloadsbar-pslldwnldspnl"
+                          class="menuitem-iconic subviewbutton"
+                          label="&downloadbar.pslldwnlds;"
+                          oncommand="mdbOverlay.pauseall();" />
+                <menuitem id="downloadsbar-rsmlldwnldspnl"
+                          class="menuitem-iconic subviewbutton"
+                          label="&downloadbar.rsmlldwnlds;"
+                          oncommand="mdbOverlay.resumeall();" />
+                <menuitem id="downloadsbar-cncllldwnldspnl"
+                          class="menuitem-iconic subviewbutton"
+                          label="&downloadbar.cncllldwnlds;"
+                          oncommand="mdbOverlay.cancelall();" />
+                <menuseparator/>
+                <menuitem id="downloadsbar-dmclearallpnl"
+                          class="menuitem-iconic subviewbutton"
+                          label="&downloadbar.clrlldwnlds;"
+                          oncommand="mdbOverlay.clearall();" />
+              </menupopup>
+            </toolbarbutton>
+          </vbox>
+        </panelview>
+      </panelmultiview>
+    </panel>
+
+    <menupopup id="downloadsbar-copy-menu"
+               orient="vertical">
+      <menuitem id="downloadsbar-cpymenu"
+                class="menuitem-iconic"
+                label="&downloadbar.cpy;"
+                oncommand="mdbOverlay.copy();" />
+    </menupopup>
+
+  </popupset>
+
+  <vbox id="browser-bottombox">
+    <toolbar id="downloadbar-bar" insertbefore="addon-bar">
+      <toolbarbutton id="downloadbar-close-button"
+                     class="panel-promo-closebutton close-icon"
+                     tooltiptext="&downloadbar.clsbr;"
+                     oncommand="mdbOverlay.tgglbr();" />
+      <toolbarbutton id="downloadsbar-mn"
+                     class="downbutton"
+                     tooltiptext="&downloadbar.menu;"
+                     oncommand="mdbOverlay.menuclick();" />
+      <html:audio src="" style="visibility:collapse;" id="downloadbar-opt-doplyr" preload="auto" />
+      <arrowscrollbox id="downloadbar-bar-wrbx"
+                      orient="horizontal" flex="1"
+                      onclick="mdbOverlay.rghtClckMn(event);"
+                      ondblclick="mdbOverlay.dblclckclrll(event);">
+      </arrowscrollbox>
+      <toolbarbutton id="downloadbar-bar-clrbttn"
+                     class="clearbutton"
+                     tooltiptext="&downloadbar.clrll;"
+                     onclick="mdbOverlay.clearall();">
+      </toolbarbutton>
+    </toolbar>
+  </vbox>
+
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="downloadbar-ddnbr"
+                   class="toolbarbutton-1 chromeclass-toolbar-additional"
+                   removable="true"
+                   label="&downloadbar.tbarbttnlabel;"
+                   tooltiptext="&downloadbar.tbarbttnlabel.tip;"
+                   cui-areatype="toolbar"
+                   oncommand="mdbOverlay.buttonclick(); event.stopPropagation();">
+      <hbox id="downloadbar-ddnbr-inner-box" class="toolbarbutton-icon">
+        <vbox id="downloads-counter" pack="center">
+          <image />
+        </vbox>
+        <toolbarseparator id="downloadbar-ddnbr-septor" />
+        <label id="downloadbar-cntr" value="0:0"
+               onclick="mdbOverlay.buttonclick();" />
+      </hbox>
+    </toolbarbutton>
+  </toolbarpalette>
+
+  <menupopup id="menu_ToolsPopup">
+    <menuitem id="downloadsbar-tls"
+              class="menuitem-iconic"
+              label="&downloadbar.tbarbttn;"
+              insertbefore="menu_preferences"
+              command="mdb-panelbarhide-command" />
+  </menupopup>
+
+</overlay>

@@ -1,0 +1,5 @@
+<!ENTITY downloadbarstats.title "Download Statistics">
+<!ENTITY downloadbarstats.nostats "No Statistics to show!">
+<!ENTITY downloadbarstats.dwnldgrph "Please download some files to get statistics graph!">
+<!ENTITY downloadbarstats.bybyts "by Bytes">
+<!ENTITY downloadbarstats.bycnt "by Count">

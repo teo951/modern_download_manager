@@ -1,0 +1,93 @@
+<!ENTITY downloadbarhelp.slidertitle "Modern Download Manager – pomoc">
+<!ENTITY downloadbarhelp.close "Zamknij">
+<!ENTITY downloadbarhelp.field "Pole">
+<!ENTITY downloadbarhelp.desc "Opis">
+<!ENTITY downloadbarhelp.description "Jeśli chcesz mieć pełną kontrolę nad wszystkimi aspektami pobierania plików – Modern Download Manager jest dodatkiem, którego szukasz.">
+<!ENTITY downloadbarhelp.description2sntc1 "Modern Download Manager może zarządzać prawie wszystkimi aspektami pobierania plików">
+<!ENTITY downloadbarhelp.Launch "Uruchom">
+<!ENTITY downloadbarhelp.Show "Wyświetl">
+<!ENTITY downloadbarhelp.Scan "Skanuj">
+<!ENTITY downloadbarhelp.Rename "Zmień nazwę">
+<!ENTITY downloadbarhelp.Checksum "Suma kontrolna">
+<!ENTITY downloadbarhelp.Pause "Pauza">
+<!ENTITY downloadbarhelp.Resume "Wznów">
+<!ENTITY downloadbarhelp.Cancel "Anuluj">
+<!ENTITY downloadbarhelp.Clean "Wyczyść">
+<!ENTITY downloadbarhelp.Delete "Usuń">
+<!ENTITY downloadbarhelp.description2sntc2 "przechowuje historię pobrań i wiele innych. Nie jest tylko dodatkiem zarządzającym pobraniami, ale pomocnym narzędziem zwiększającym wydajność.">
+<!ENTITY downloadbarhelp.description3 "Modern Download Manager jest stworzony tak, by zaspokajać twoje potrzeby i życzenia. Wszystko, czego oczekujesz, jest zaimplementowane w dodatku i wykorzystuje najnowsze funkcje Firefoksa 26 oraz nowszych wersji, polepszając wydajność przeglądarki i pobieranie plików. Modern Download Manager jest tworzony, uwzględniając na bieżąco uwagi i prośby użytkowników, dzięki czemu jest stale aktualny i wzbogacany o nowe funkcje.">
+<!ENTITY downloadbarhelp.description4 "Zainstaluj Modern Download Manager, by mieć pełnię możliwości kontrolowania procesu pobierania plików.">
+<!ENTITY downloadbarhelp.features "Funkcje">
+<!ENTITY downloadbarhelp.description5 "Podczas pobierania plików z internetu, Modern Download Manager automatycznie - w zależności od ustawień – umieszcza elementy postępu pobierania w pasku pobierania lub w panelu pobierania. Może wyświetlać zarówno pobierane, jak i również pobrane elementy. Pasek pobierania jest wyświetlany w dolnej części okna głównego Firefoksa zazwyczaj powyżej paska dodatków, a panel pobierana jest wyświetlany po kliknięciu ikony dodatku znajdującej się na pasku nawigacyjnym lub w panelu menu. Modern Download Manager jest łatwy w obsłudze i na tyle inteligentny, że w trybie paska jest wyświetlany tylko wtedy, gdy trwa pobieranie, a w trybie kompaktowym razem z ikoną jest wyświetlany licznik informujący o liczbie pobieranych/wstrzymanych i zakończonych pobrań. Jeśli nie ma trwających lub wstrzymanych pobrań, pasek chowa się automatycznie, by udostępnić użytkownikowi jak największy obszar strony. Zostanie ponownie automatycznie wyświetlony z chwilą rozpoczęcia pobierania pliku.">
+<!ENTITY downloadbarhelp.description6 "Jeśli chcesz wyświetlić pasek lub panel pobierania nawet wówczas, gdy nie trwa pobieranie, możesz w tym celu użyć poniższego skrótu klawiszowego:">
+<!ENTITY downloadbarhelp.description7 "Ctrl + Shift + U">
+<!ENTITY downloadbarhelp.description9 "Zmianę skrótu klawiszowego można dokonać z poziomu okna ustawień dodatku. Otwórz ustawienia dodatku, przejdź na kartę Różne i w sekcji Skróty klawiszowe dokonaj zmiany skrótu. Kliknij ikonę ?, by uzyskać więcej informacji na temat zmiany skrótu.">
+<!ENTITY downloadbarhelp.description10 "Powyższego skrótu można także użyć do ukrycia paska lub panelu pobierania w dowolnej chwili – innymi słowy, skrót ten służy do wyświetlania/ukrywania paska lub panelu pobierania.">
+<!ENTITY downloadbarhelp.description10a "Możesz także wyświetlić pasek, korzystając z menu Menedżer pobierania, które znajduje się w menu Narzędzia Firefoksa.">
+<!ENTITY downloadbarhelp.description11 "Po wyświetleniu paska pobierania ujrzysz po jego lewej stronie przyciski Ukryj pasek i Menu, a po prawej przycisk Wyczyść. Przycisk Ukryj pasek służy, jak sama nazwa wskazuje, do ukrycia paska. Przycisk Menu to główny przycisk dodatku pracującego w trybie paska. Jego użycie spowoduje wyświetlenie menu z zawartością opisaną w dalszej części. Przycisk Wyczyść, służy do usunięcia z paska wszystkich zakończonych pobrań. Oba przyciski można ukryć z poziomu okna ustawień.">
+<!ENTITY downloadbarhelp.description12 "Elementy znajdujące się w menu przycisku Menu">
+<!ENTITY downloadbarhelp.options "Ustawienia">
+<!ENTITY downloadbarhelp.description13 "za pomocą tego elementu menu spowoduje przełączenia interfejsu użytkownika w tryb kompaktowy.  otworzyć okno ustawień dodatku, umożliwiające dostosowanie dodatku do potrzeb użytkownika.">
+<!ENTITY downloadbarhelp.compactmode "Tryb kompaktowy">
+<!ENTITY downloadbarhelp.description58 "użycie tego elementu menu spowoduje przejście interfejsu użytkownika w tryb kompaktowy charakteryzujący się tym, że pasek pobrań zostanie ukryty, a na pasku nawigacyjnym zostanie wyświetlony przycisk dodatku z licznikiem pobrań. Kliknięcie tego przycisku spowoduje wyświetlenie panelu z pobraniami i elementami sterującymi.">
+<!ENTITY downloadbarhelp.statistics "Statystyki">
+<!ENTITY downloadbarhelp.description14 "użycie tego elementu spowoduje wyświetlenie statystyk pobierania plików w postaci wykresów kołowych.">
+<!ENTITY downloadbarhelp.showdownloadhistory "Wyświetl historię pobierania">
+<!ENTITY downloadbarhelp.description15 "po kliknięciu tego elementu zostanie otworzone okno biblioteki Firefoksa, w którym będą widoczne pobrane pliki.">
+<!ENTITY downloadbarhelp.opendownloadtab "Otwórz pobrania w karcie">
+<!ENTITY downloadbarhelp.description16 "za pomocą tego elementu można otwierać historię pobierania Firefoksa w karcie przeglądarki.">
+<!ENTITY downloadbarhelp.downloads "Pobieranie">
+<!ENTITY downloadbarhelp.description17 "w submenu tego elementu znajdują się elementy sterowania pobraniami, takie jak: Wstrzymaj wszystkie pobrania, Wznów wszystkie pobrania, Anuluj wszystkie pobrania i Wyczyść wszystkie pobrane.">
+<!ENTITY downloadbarhelp.help "Pomoc">
+<!ENTITY downloadbarhelp.description18 "użycie tego elementu menu spowoduje otwarcie strony pomocy, na której aktualnie się znajdujesz. Na stronie można uzyskać szczegółowe informacje na temat dodatku i jak go używać w efektywny sposób.">
+<!ENTITY downloadbarhelp.closedownloadbar "Ukryj pasek">
+<!ENTITY downloadbarhelp.description19 "kliknięcie tego elementu spowoduje ukrycie paska pobierania.">
+<!ENTITY downloadbarhelp.description20 "Z chwilą rozpoczęcia pobierania plików, dodatek automatycznie umieszcza pobierane elementy na pasku pobierania. Poniżej znajduje się odnośnik do wypróbowania działania dodatku. Kliknij odnośnik, by rozpocząć pobieranie.">
+<!ENTITY downloadbarhelp.description21 "W każdym elemencie obrazującym pobieranie znajdują się następujące elementy:">
+<!ENTITY downloadbarhelp.dwnldcn "Ikona pobierania">
+<!ENTITY downloadbarhelp.description22 "ikona przypisana danemu typowi pobieranego pliku. Ikona ta może być różna w zależności od używanego motywu Firefoksa.">
+<!ENTITY downloadbarhelp.flnm "Nazwa pliku">
+<!ENTITY downloadbarhelp.description23 "nazwa pobieranego pliku. Jeśli nazwa pliku jest dłuższa niż wyświetlane pole, zostanie automatycznie ucięta.">
+<!ENTITY downloadbarhelp.prgrssctn "Sekcja postępu pobierania">
+<!ENTITY downloadbarhelp.description24 "sekcja ta zawiera procentowy wskaźnik postępu pobierania, informujący ile procent pliku zostało pobrane i szybkość pobierania informująca, z jaką szybkością plik jest pobierany. Z poziomu okna ustawień można dodać wyświetlanie w tej sekcji czasu, jaki pozostał do zakończenia pobierania.">
+<!ENTITY downloadbarhelp.description25 "Kliknięcie prawym przyciskiem myszy pobieranego elementu spowoduje wyświetlenie menu, w którym znajdują się następujące elementy">
+<!ENTITY downloadbarhelp.description26 "powoduje otwarcie lub uruchomienie pobranego pliku. Funkcja ta jest dostępna tylko dla zakończonych pobrań.">
+<!ENTITY downloadbarhelp.description27 "powoduje wyświetlenie folderu, w którym znajduje się pobrany plik.">
+<!ENTITY downloadbarhelp.description28 "powoduje wyświetlenie okna historii pobierania.">
+<!ENTITY downloadbarhelp.description29 "powoduje włączenie skanowania pobranego pliku, używając w tym celu przypisanego programu antywirusowego. Jeśli program antywirusowy nie został jeszcze określony, będzie wyświetlana informacja i zachęta do skonfigurowania skanera antywirusowego.">
+<!ENTITY downloadbarhelp.description30 "powoduje otwarcie okna sum kontrolnych, gdzie można wygenerować i porównać sumy kontrolne MD5, MD2, SHA1, SHA256, SHA384, SHA512 dla pobranego pliku.">
+<!ENTITY downloadbarhelp.description31 "powoduje otwarcie okna zmiany nazwy pobranego pliku. Funkcja ta jest dostępna tylko dla zakończonych pobrań.">
+<!ENTITY downloadbarhelp.description57 "wyświetla submenu zawierające elementy służące do wysyłania wybranego pobrania na pulpit, do folderu Pobrane lub wybrania własnego folderu.">
+<!ENTITY downloadbarhelp.description32 "powoduje usunięcie pobranych plików z komputera. W trakcie próby usunięcia pliku zostanie wyświetlona prośba o potwierdzenie operacji. Funkcja ta jest dostępna tylko dla zakończonych pobrań.">
+<!ENTITY downloadbarhelp.description33 "powoduje otwarcie w nowej karcie strony, z której jest pobierany plik.">
+<!ENTITY downloadbarhelp.description34 "powoduje skopiowanie do schowka adresu URL strony, z której jest pobierany plik.">
+<!ENTITY downloadbarhelp.description35 "powoduje anulowanie aktywnego pobierania i usunięcie go z komputera. Funkcja ta jest dostępna tylko dla aktywnych pobrań.">
+<!ENTITY downloadbarhelp.description36 "powoduje zatrzymanie aktywnego pobierania.">
+<!ENTITY downloadbarhelp.description37 "powoduje wznowienie zatrzymanego pobierania.">
+<!ENTITY downloadbarhelp.description38 "powoduje usunięcie elementu z paska pobierania.">
+<!ENTITY downloadbarhelp.description39 "Kliknięcie lewym przyciskiem myszy trwającego, czy zakończonego pobrania powoduje wyświetlenie panelu informacyjnego, który zawiera następujące elementy:">
+<!ENTITY downloadbarhelp.description40 "adres URL źródła, z którego jest pobierany plik. Kliknięcie lewym przyciskiem myszy tego adresu powoduje otwarcie źródłowej strony w nowej karcie, kliknięcie prawym przyciskiem myszy, otworzy menu umożliwiające skopiowanie tego adresu.">
+<!ENTITY downloadbarhelp.description41 "miejsce na komputerze, w którym jest zapisywany pobierany plik. Kliknięcie lewym przyciskiem myszy tego adresu powoduje wyświetlenie folderu, w którym znajduje się pobrany plik, kliknięcie prawym przyciskiem myszy otworzy menu umożliwiające skopiowanie ścieżki do tego pliku.">
+<!ENTITY downloadbarhelp.description42 "prędkość pobierania pliku wyrażona w KB/s.">
+<!ENTITY downloadbarhelp.description43 "średnia prędkość pobranego pliku wyrażona w KB/s. Informacja ta jest wyświetlana dla zakończonych pobrań.">
+<!ENTITY downloadbarhelp.description44 "postęp pobierania wyrażony wartością procentową.">
+<!ENTITY downloadbarhelp.description45 "czas, jaki pozostał do zakończenia pobierania.">
+<!ENTITY downloadbarhelp.description46 "całkowity czas pobierania. Informacja ta jest wyświetlana dla zakończonych pobrań.">
+<!ENTITY downloadbarhelp.description47 "pierwsza część informuje o pobranej ilości, druga ile jeszcze pozostało do pobrania.">
+<!ENTITY downloadbarhelp.description48 "rozmiar pobranego pliku na dysku. Informacja ta jest wyświetlana dla zakończonych pobrań.">
+<!ENTITY downloadbarhelp.description49 "automatycznie skalkulowana suma kontrolna MD5 pobranego pliku. Informacja ta jest wyświetlana dla zakończonych pobrań.">
+<!ENTITY downloadbarhelp.description50 "Panel informacyjny zawiera także podgląd, w postaci miniatury, pobranych obrazków. Wyświetlany jest podgląd następujących typów plików: PNG, JPG, JPEG, GIF i BMP. Kliknięcie miniatury spowoduje otwarcie pobranego obrazka w nowej karcie przeglądarki.">
+<!ENTITY downloadbarhelp.description51 "Umieszczenie kursora myszy nad pobraniem powoduje wyświetlenie panelu informacyjnego w postaci wyskakującego okna, umożliwiając szybkie zapoznanie się z zawartymi w nim danymi. W tym trybie nie działają odnośniki.">
+<!ENTITY downloadbarhelp.tip "Podpowiedź">
+<!ENTITY downloadbarhelp.description52 "Dwukrotne kliknięcie pobieranego elementu spowoduje w zależności od ustawień automatyczne uruchomienie pliku lub jego wyświetlemie.">
+<!ENTITY downloadbarhelp.description53 "Dwukrotne kliknięcie paska pobierania spowoduje usunięcie z paska wszystkich zakończonych pobrań.">
+<!ENTITY downloadbarhelp.description54 "Kliknięcie środkowym przyciskiem myszy pobrania spowoduje usunięcie go z paska pobierania.">
+<!ENTITY downloadbarhelp.description55 "Kliknięcie prawym przyciskiem myszy pustego miejsca na pasku pobierania spowoduje wyświetlenie menu kontekstowego.">
+<!ENTITY downloadbarhelp.description56 "Z poziomu okna ustawień można dostosować Modern Download Managera do swoich wymagań. Okno ustawień można otworzyć, klikając w trybie paska przycisk Menu i wybierając element Ustawienia. W trybie kompaktowym na dole panelu dostępny jest przycisk Ustawienia. Okno to można również otworzyć – zleżnie od systemu operacyjnego – z poziomu menu przycisku Firefox lub menu Narzędzia Firefoksa w systemach Windows, z poziomu menu Narzędzia w systemach Mac OSX i Linux. Po wybraniu danego menu, należy wybrać Dodatki, przejść do karty Rozszerzenia i naciśnąć przycisk Opcje/Preferencje znajdujący się w sekcji Modern Download Managera. Opisy poszczególnych elementów okna ustawień wyświetlane są po kliknięciu ikony ? znajdującej się przy danej sekcji okna ustawień.">
+<!ENTITY downloadbarhelp.imagecaption1 "Kliknięcie prawym przyciskiem myszy dowolnego pobrania powoduje wyświetlenie menu zawierającego funkcje zarządzania pobraniami.">
+<!ENTITY downloadbarhelp.imagecaption2 "Modern Download Manager może pracować w trybie kompaktowym, wyświetlając odpowiedni przycisk na pasku nawigacyjnym przeglądarki.">
+<!ENTITY downloadbarhelp.imagecaption3 "Można zobaczyć statystyki pobieranych plików zawierające dane o typie pobrań i ich rozmiarze.">
+<!ENTITY downloadbarhelp.imagecaption4 "Kliknięcie pobieranego elementu wywołuje panel informacyjny zawierający szczegóły pobierania.">
+<!ENTITY downloadbarhelp.imagecaption5 "Okno ustawień umożliwia dostosowanie dodatku do swoich potrzeb i wymagań.">
+<!ENTITY downloadbarhelp.babelzilla "Jeśli Modern Download Manager nie jest zlokalizowany w twoim języku, a chcesz go przetłumaczyć, zarejestruj się na BabelZilli.">
+<!ENTITY downloadbarhelp.mozillazine "Więcej informacji i pomoc można uzyskać na forum Mozillazine:">
