@@ -1,0 +1,41 @@
+body {
+	font-family: Helvetica, Arial, Verdana, sans-serif; 
+	font-size: 14px;
+  background: linear-gradient(to bottom, #B2A1A8, #E8E2E5, #B2A1A8 );
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+
+#main {
+	width: 750px;
+	background-color: #f2f2f2;
+	padding: 30px 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 15px 15px 15px 15px;
+	border: 1px solid #CCCCCC;
+	margin: 25px auto;
+}
+
+#heading {
+	margin: 0px 0px 0.125em;
+	line-height: 1.125;
+	font-size: 2em;
+	text-align:center;
+}
+
+.nodisplay {
+	display:none;
+}
+
+.centertext {
+	text-align:center;
+}
+
+.link {
+	color: #3366FF;
+	text-decoration: none;
+	cursor: pointer;
+}

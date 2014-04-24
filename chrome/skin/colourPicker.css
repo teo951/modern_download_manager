@@ -1,0 +1,25 @@
+@import url("chrome://global/skin/");
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#huesaturationbox {
+  margin: 4px 7px 5px 3px;
+}
+
+#redImg, #greenImg, #blueImg,
+#hueImg, #saturationImg, #brightnessImg {
+  border: 1px solid black;
+  cursor: crosshair;
+}
+
+#saturationImg {
+  background-color: transparent;
+}
+
+#swatch {
+  max-width: 67px;
+  max-height: 67px;
+  min-width: 67px;
+  min-height: 67px;
+  border: 1px solid black;
+  margin-top: 2px;
+}

@@ -1,0 +1,25 @@
+<!ENTITY previewColour.label       "Preview:">
+<!ENTITY dialog.title              "Color Picker">
+
+<!ENTITY predef.label              "Predefined colors:">
+
+<!ENTITY rgb.label                 "RGB">
+<!ENTITY hsb.label                 "HSB">
+
+<!ENTITY red.label                 "Red:">
+<!ENTITY green.label               "Green:">
+<!ENTITY blue.label                "Blue:">
+
+<!ENTITY hue.label                 "Hue:">
+<!ENTITY saturation.label          "Saturation:">
+<!ENTITY brightness.label          "Brightness:">
+
+<!ENTITY transparency.label        "Transparent">
+<!ENTITY opacity.label             "Opacity:">
+
+<!ENTITY lastPickedColor.label     "Last-picked color">
+<!ENTITY lastPickedColor.accessKey "L">
+
+<!ENTITY hexColor.label            "Hex:">
+<!ENTITY nameColor.label           "Name:">
+<!ENTITY resetDefault.label        "Reset default">

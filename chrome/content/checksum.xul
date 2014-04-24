@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://downloadbar/skin/downloadbar.css" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://downloadbar/locale/checksum.dtd">
+
+<dialog id="downloadbar-checksum" title="&downloadbarchksm.md5chksm;"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        buttons="'">
+
+  <script type="application/x-javascript" src="chrome://downloadbar/content/checksum.js" />
+
+  <stringbundleset>
+    <stringbundle id="downloadbar-optsprprts" src="chrome://downloadbar/locale/browserOverlay.properties"/>
+  </stringbundleset>
+
+  <vbox id="downloadbarchksm-content">
+    <hbox id="downloadbarchksm-title" align="center">
+      <label value="&downloadbarchksm.md5chksm;" />
+      <spacer flex="1" />
+      <toolbarbutton class="close-icon closebutton"
+                     tooltiptext="Zamknij"
+                     oncommand="window.close()" />
+    </hbox>
+
+    <hbox align="center" class="marg">
+      <menulist oncommand="mdbChecksum.chck(event);">
+        <menupopup>
+        <menuitem label="MD5" value="MD5" />
+        <menuitem label="SHA1" value="SHA1" />
+        <menuitem label="MD2" value="MD2" />
+        <menuitem label="SHA256" value="SHA256" />
+        <menuitem label="SHA384" value="SHA384" />
+        <menuitem label="SHA512" value="SHA512" />
+        </menupopup>
+      </menulist>
+      <label id="checksumvl" value="" />
+    </hbox>
+    <separator class="thin" />
+    <hbox align="center" class="marg">
+      <image id="rsltcn"
+             style="-moz-image-region: rect(64px, 144px, 80px, 128px) !important; list-style-image: url('chrome://downloadbar/skin/images/Silk.png') !important;" />
+      <label value="&downloadbarchksm.cmpr;:" />
+      <textbox id="cmprtxtbx" flex="1" />
+    </hbox>
+  </vbox>
+</dialog>

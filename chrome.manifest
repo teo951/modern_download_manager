@@ -1,0 +1,11 @@
+content  downloadbar  chrome/content/ contentaccessible=yes
+skin  downloadbar  classic/1.0  chrome/skin/
+overlay  chrome://browser/content/browser.xul  chrome://downloadbar/content/downloadbar.xul
+component {e0abeff8-a708-4eaf-b788-4e86ffd9e961} components/components.js
+contract @downloadbar.com/bs;1 {e0abeff8-a708-4eaf-b788-4e86ffd9e961}
+category profile-after-change DownloadBar @downloadbar.com/bs;1
+style  chrome://global/content/customizeToolbar.xul  chrome://downloadbar/skin/downloadbar.css
+override  chrome://downloadbar/skin/panelbuttons.css  chrome://downloadbar/skin/panelbuttons-mac.css  os=Darwin
+
+locale  downloadbar  en-US  chrome/locale/en-US/
+locale  downloadbar  pl    chrome/locale/pl/

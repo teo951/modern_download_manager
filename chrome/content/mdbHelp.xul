@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://downloadbar/skin/downloadbar.css" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://downloadbar/locale/help.dtd">
+
+<dialog id="mdb-helpWindow" title="&downloadbarhelp.slidertitle;"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        onload='document.getElementById("mdbHelpID").value = document.title + "   (" + window.arguments[0] + ")"; mdbSlide.mdbSliderLoad();'
+        buttons="'"
+        maxwidth="450">
+
+  <script type="application/x-javascript" src="chrome://downloadbar/content/mdbSlider.js" />
+  <script type="application/x-javascript" src="chrome://downloadbar/content/mdbHelp.js" />
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="mdb-help" src="chrome://downloadbar/locale/mdbHelp.properties" />
+  </stringbundleset>
+
+  <hbox>
+    <label value="&downloadbarhelp.slidertitle;" class="fonttitle" />
+    <spacer flex="1" />
+    <toolbarbutton id="mdbHelp-close"
+                   tooltiptext="&downloadbarhelp.close;"
+                   oncommand="window.close()" />
+  </hbox>
+
+  <groupbox class="box-inset">
+    <caption label="&downloadbarhelp.field;" class="outset rounded" />
+    <hbox>
+      <description id="field" value="" class="fontbold" />
+    </hbox>
+  </groupbox>
+  <groupbox id="helptextbox" flex="1" class="box-inset">
+    <caption label="&downloadbarhelp.desc;" class="outset rounded" />
+  </groupbox>
+  <label id="mdbHelpID" value="" />
+
+  <script type="application/x-javascript">mdbPanelContent.mdbLoadHelp();</script>
+
+</dialog>
