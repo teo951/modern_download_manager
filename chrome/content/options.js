@@ -262,7 +262,7 @@ var mdbPref = {
         for(var i=stcks.length-1;i>=0;i--){
           document.getElementById("downloadbar-bar-wrbx").insertBefore(stcks[i],document.getElementById("downloadbar-bar-wrbx").firstChild);
         }
-        
+
         document.getElementById("downloadbar-bar").setAttribute("collapsed","false");
         document.getElementById("downloadbar-ddnbr").hidden=true;
         document.getElementById("downloadbar-panel").hidePopup();

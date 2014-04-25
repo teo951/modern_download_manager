@@ -347,8 +347,8 @@
 
     <panel id="PanelUI-popup">
       <panelmultiview id="PanelUI-multiView" mainViewId="PanelUI-mainView">
-        <panelview id="downloadbar-auspanel" flex="1" noautohide="true">
-          <label value="&downloadbar.tbarbttn;" class="panel-subview-header"/>
+        <panelview id="downloadbar-auspanel" flex="1">
+          <label value="&downloadbar.tbarbttnlabel.tip;" class="panel-subview-header"/>
           <vbox id="downloadbar-subview" class="panel-subview-body">
             <vbox id="downloadbar-panelbox" class="auspaneltlbr">
               <arrowscrollbox id="downloadbar-downloadpanel"

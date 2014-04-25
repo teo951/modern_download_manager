@@ -218,7 +218,7 @@ var mdbOverlay = {
     setTimeout(function(){panbutclickMenu.hidePopup();},10000);
   },
 
-  modePanel: function() {
+  /*modePanel: function() {
     mdbOverlay.prefs.setCharPref("userinterface","panel");
     if(mdbOverlay.prefs.getCharPref("userinterface")=="panel"){
       let enumerator = mdbOverlay.wm.getEnumerator("navigator:browser");
@@ -231,6 +231,40 @@ var mdbOverlay = {
         }
         document.getElementById("downloadbar-bar").setAttribute("collapsed","true");
         document.getElementById("downloadbar-ddnbr").hidden=false;
+      }
+    }
+  },*/
+
+  modePanel: function() {
+    if(mdbOverlay.vc.compare(mdbOverlay.appInfo.version, "28") <= 0){
+      mdbOverlay.prefs.setCharPref("userinterface","panel");
+      if(mdbOverlay.prefs.getCharPref("userinterface")=="panel"){
+        let enumerator = mdbOverlay.wm.getEnumerator("navigator:browser");
+        while(enumerator.hasMoreElements()) {
+          let window = enumerator.getNext();
+          let document=window.document;
+          let stcks=document.getElementById("downloadbar-bar-wrbx").getElementsByTagName("stack");
+          for(var i=stcks.length-1;i>=0;i--){
+            document.getElementById("downloadbar-downloadpanel").insertBefore(stcks[i],document.getElementById("downloadbar-downloadpanel").firstChild);
+          }
+          document.getElementById("downloadbar-bar").setAttribute("collapsed","true");
+          document.getElementById("downloadbar-ddnbr").hidden=false;
+        }
+      }
+    }
+    if(mdbOverlay.vc.compare(mdbOverlay.appInfo.version, "29") >= 0){
+      mdbOverlay.prefs.setCharPref("userinterface","panel");
+      if(mdbOverlay.prefs.getCharPref("userinterface")=="panel"){
+        let enumerator = mdbOverlay.wm.getEnumerator("navigator:browser");
+        while(enumerator.hasMoreElements()) {
+          let window = enumerator.getNext();
+          let document=window.document;
+          let stcks=document.getElementById("downloadbar-bar-wrbx").getElementsByTagName("stack");
+          for(var i=stcks.length-1;i>=0;i--){
+            document.getElementById("downloadbar-downloadpanel").insertBefore(stcks[i],document.getElementById("downloadbar-downloadpanel").firstChild);
+          }
+          document.getElementById("downloadbar-bar").setAttribute("collapsed","true");
+        }
       }
     }
   },
