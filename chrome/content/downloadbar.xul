@@ -461,6 +461,8 @@
         <label id="downloadbar-cntr" value="0:0"
                onclick="mdbOverlay.buttonclick();" />
       </hbox>
+      <label id="downloadbar-ddnbr-label"
+             value="&downloadbar.tbarbttnlabel;"/>
     </toolbarbutton>
   </toolbarpalette>
 

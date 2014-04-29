@@ -4,6 +4,7 @@ Components.utils.import("resource://gre/modules/osfile.jsm");
 Components.utils.import("resource://gre/modules/Task.jsm");
 Components.utils.import("resource://gre/modules/DownloadIntegration.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
+Components.utils.import("resource:///modules/CustomizableUI.jsm");
 
 var mdbOverlay = {
 
@@ -158,6 +159,37 @@ var mdbOverlay = {
     }
   },
 
+  addAddonListener: function() {
+    if(mdbOverlay.vc.compare(mdbOverlay.appInfo.version, "29") >= 0){
+      let addonListener = {
+        onDisabling: function(addon, needsRestart) {
+          if (addon.id == "modernDownloadManager@teo.pl") {
+            let placement = CustomizableUI.getPlacementOfWidget("downloads-button");
+            let area = placement && placement.area;
+            let downButton = "downloads-button"
+            if (area != CustomizableUI.AREA_NAVBAR) {
+              CustomizableUI.addWidgetToArea(downButton, CustomizableUI.AREA_NAVBAR, 5);
+            }
+          }
+        },
+        onUninstalling: function(addon, needsRestart) {
+          if (addon.id == "modernDownloadManager@teo.pl") {
+            let placement = CustomizableUI.getPlacementOfWidget("downloads-button");
+            let area = placement && placement.area;
+            let downButton = "downloads-button"
+            if (!area != CustomizableUI.AREA_NAVBAR) {
+              CustomizableUI.addWidgetToArea(downButton, CustomizableUI.AREA_NAVBAR, 5);
+            }
+          }
+        },
+      };
+      try {
+	  	  Components.utils.import("resource://gre/modules/AddonManager.jsm");
+        AddonManager.addAddonListener(addonListener);
+      } catch (ex) {}
+    }
+  },
+
   hideMenuToolsItem: function() {
     if(mdbOverlay.vc.compare(mdbOverlay.appInfo.version, "29") >= 0){
       let enumerator = mdbOverlay.wm.getEnumerator("navigator:browser");
@@ -169,6 +201,9 @@ var mdbOverlay = {
         if(area == CustomizableUI.AREA_PANEL){
           document.getElementById("downloadsbar-tls").hidden=true;
           document.getElementById("downloadbar-bar").removeChild(document.getElementById("mdb-keyset"))
+        }
+        if(area == CustomizableUI.AREA_NAVBAR){
+          document.getElementById("downloadbar-ddnbr-label").hidden=true;
         }
       }
     }
@@ -218,7 +253,7 @@ var mdbOverlay = {
     setTimeout(function(){panbutclickMenu.hidePopup();},10000);
   },
 
-  /*modePanel: function() {
+  modePanel: function() {
     mdbOverlay.prefs.setCharPref("userinterface","panel");
     if(mdbOverlay.prefs.getCharPref("userinterface")=="panel"){
       let enumerator = mdbOverlay.wm.getEnumerator("navigator:browser");
@@ -231,40 +266,6 @@ var mdbOverlay = {
         }
         document.getElementById("downloadbar-bar").setAttribute("collapsed","true");
         document.getElementById("downloadbar-ddnbr").hidden=false;
-      }
-    }
-  },*/
-
-  modePanel: function() {
-    if(mdbOverlay.vc.compare(mdbOverlay.appInfo.version, "28") <= 0){
-      mdbOverlay.prefs.setCharPref("userinterface","panel");
-      if(mdbOverlay.prefs.getCharPref("userinterface")=="panel"){
-        let enumerator = mdbOverlay.wm.getEnumerator("navigator:browser");
-        while(enumerator.hasMoreElements()) {
-          let window = enumerator.getNext();
-          let document=window.document;
-          let stcks=document.getElementById("downloadbar-bar-wrbx").getElementsByTagName("stack");
-          for(var i=stcks.length-1;i>=0;i--){
-            document.getElementById("downloadbar-downloadpanel").insertBefore(stcks[i],document.getElementById("downloadbar-downloadpanel").firstChild);
-          }
-          document.getElementById("downloadbar-bar").setAttribute("collapsed","true");
-          document.getElementById("downloadbar-ddnbr").hidden=false;
-        }
-      }
-    }
-    if(mdbOverlay.vc.compare(mdbOverlay.appInfo.version, "29") >= 0){
-      mdbOverlay.prefs.setCharPref("userinterface","panel");
-      if(mdbOverlay.prefs.getCharPref("userinterface")=="panel"){
-        let enumerator = mdbOverlay.wm.getEnumerator("navigator:browser");
-        while(enumerator.hasMoreElements()) {
-          let window = enumerator.getNext();
-          let document=window.document;
-          let stcks=document.getElementById("downloadbar-bar-wrbx").getElementsByTagName("stack");
-          for(var i=stcks.length-1;i>=0;i--){
-            document.getElementById("downloadbar-downloadpanel").insertBefore(stcks[i],document.getElementById("downloadbar-downloadpanel").firstChild);
-          }
-          document.getElementById("downloadbar-bar").setAttribute("collapsed","true");
-        }
       }
     }
   },
